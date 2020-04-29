@@ -20,7 +20,10 @@ export default {
     };
   },
   mounted() {
-    this.scroll = new BScroll(".wrapper")
+    this.scroll = new BScroll(".wrapper",{
+      click: true,
+      stopPropagation: true
+    })
   },
 };
 </script>

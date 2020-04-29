@@ -18,6 +18,9 @@
           </div>
         </div>
       </div>
+      <div class="page3">
+        <swipe :swipe="swipe"></swipe>
+      </div>
     </scroll>
   </div>
 </template>
@@ -26,37 +29,54 @@
 
 <script>
 import Scroll from "../components/commen/bs";
+import Swipe from '../components/commen/swipe'
 export default {
   name: "Home",
   components: {
-    Scroll
+    Scroll,
+    Swipe
   },
   data() {
-    return {};
+    return {
+      swipe:[
+        {
+          id: 1,
+          src: require('@/assets/img/page3_swipe1.png')
+        },
+        {
+        id: 2,
+        src: require('@/assets/img/page3_swipe1.png')
+        },
+        {
+        id: 3,
+        src: require('@/assets/img/page3_swipe1.png')
+        },
+      ]
+    };
   }
 };
 </script>
 <style lang='less' scoped>
-  .box-size(){
+  .box_size(){
       width: 100vw;
       height: 100vh;
   }
   .scroll{
-   .box-size();
+   .box_size();
     overflow: hidden;
     .page1{
-     .box-size();
+     .box_size();
      background: url('../assets/img/page1_bg.jpg') no-repeat center/cover
     }
     .page2{
-      .box-size();
+      .box_size();
       position: relative;
       .page2_bg{
-        .box-size();
+        .box_size();
         filter: blur(3px);
       }
       .page2_content{
-        .box-size();
+        .box_size();
         position: absolute;
         left: 0;
         top: 0;
@@ -64,18 +84,26 @@ export default {
         flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
+        audio{
+          width: 650/2px;
+        }
       }
-      .page2_img,.view_spot{
+      .page2_img img{
        width: 650/2px;
       }
       .scroll_sub{
         height: 300/2px;
+        background: #ccc;
         overflow: hidden;
       }
       .view_spot{
+        width: 650/2px;
         text-align: justify;
         line-height: 2;
       }
+    }
+    .page3{
+      .box_size()
     }
   }
 </style>
