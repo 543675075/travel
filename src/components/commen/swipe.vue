@@ -1,15 +1,16 @@
 <template>
   <div class="swipe">
-    <img src="../../assets/img/arrow_left.png" class="arrow arrow_left" />
-    <img src="../../assets/img/arrow_right.png" class="arrow arrow_right" />
+    <img src="https://cyl-blog-1300455867.cos.ap-shanghai.myqcloud.com/travel/img/arrow_left.f0a0e5ae.png" class="arrow arrow_left" />
+    <img src="https://cyl-blog-1300455867.cos.ap-shanghai.myqcloud.com/travel/img/arrow_right.a119338f.png" class="arrow arrow_right" />
     <van-swipe class="my_swipe" autoplay="false" indicator-color="white" :show-indicators="false">
+    <img src="https://cyl-blog-1300455867.cos.ap-shanghai.myqcloud.com/travel/img/img_wrapper.7e844ee8.png" class="img_wrapper" />
       <van-swipe-item v-for="item in swipe" :key="item.id">
         <img :src="item.src" class="img_bg" />
-        <img src="../../assets/img/img_wrapper.png" class="img_wrapper" />
         <img :src="item.src" class="img_show" />
       </van-swipe-item>
     </van-swipe>
   </div>
+  
 </template>
 
 
@@ -43,6 +44,10 @@ export default {
     right: 40px;
   }
 }
+.my_swipe{
+  // position: relative;
+  // background: url('https://cyl-blog-1300455867.cos.ap-shanghai.myqcloud.com/travel/img/img_wrapper.7e844ee8.png') no-repeat top left;
+}
 .my_swipe .van-swipe-item {
   position: relative;
   width: 100vw;
@@ -67,9 +72,11 @@ export default {
 .img_show {
   width: 586px;
   height: 852px;
+  z-index: 3;
 }
 .img_wrapper {
   width: 626px;
   height: 1036px;
+  z-index: 2;
 }
 </style>
